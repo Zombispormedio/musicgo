@@ -1,0 +1,20 @@
+{
+  "name": "musicgo",
+  "version": "1.0.0",
+  "description": "Musicgo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "express": "~4.0.0",
+    "johnny-five": "^0.8.86",
+    "method-override": "~1.0.0",
+    "morgan": "~1.0.0",
+    "node-cache": "^3.0.0",
+    "request": "^2.60.0"
+  }
+}

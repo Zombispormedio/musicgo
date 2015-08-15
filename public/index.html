@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MusicGo</title>
+        <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <link rel="stylesheet" href="main.css">
+        <!-- Before body closing tag -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/velocity/velocity.js"></script>
+        <script src="bower_components/moment/min/moment-with-locales.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/lumx/dist/lumx.js"></script>
+    </head>
+    <body  ng-controller="MainController">
+
+
+        <div class="mt++" flex-container="column" flex-align="space-between center" >
+            <div flex-item="4" class="p+">
+                <canvas id="canvas" width="60" height="130" style="display: block;"></canvas>
+            </div>
+            <div flex-item="4" class="p+">
+                <button class="btn btn--m btn--blue btn--fab" lx-ripple ng-click="playMusic()"><i id="button_icon" class="mdi mdi-play" ></i></button>
+            </div>
+
+            <div flex-item="6" class="mt++" id="file_list">
+                <div flex-item>
+                    <lx-text-field label="Location">
+                        <input type="text" ng-model="path" >
+                    </lx-text-field>
+                </div>
+
+                <ul class="list mt++">
+                    <li class="list-row list-row--has-separator" ng-repeat="file in files" ng-click="clickonFile(file)">
+                        <div class="list-row__primary">
+                            <i class="icon icon--l icon--circled mdi" ng-class="{'icon--grey mdi-folder': file.directory, 'icon--blue mdi-file': !file.directory}"></i>
+                        </div>
+
+                        <div class="list-row__content">
+                            <span>{{file.name}}</span>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+        <script src="utils.js"></script>
+        <script src="audio.js"></script>
+        <script src="index.js"></script>
+
+    </body>
+</html>
